@@ -15,7 +15,7 @@
 //                                                                       @(  @@
 //		Universal Dallas Semiconductor DS18B20 sigital sensor driver wrapper
 
-#include "universal_ds18b20Driver.hpp"
+#include "ds18B20-universal-driver.hpp"
 
 void DsDriver::vectorAddressToDeviceAddress(std::vector<uint8_t> vectAddress, DeviceAddress &address)
 {
@@ -106,6 +106,7 @@ void DsDriver::stringToVectorAddress(String addressString, std::vector<uint8_t> 
     deviceAddress.shrink_to_fit();
 }
 
+//  TODO: add HED string output version
 void DsDriver::stringToDeviceAddress(String addressString, DeviceAddress &deviceAddress)
 {
     size_t outPutIterator = 0;
@@ -267,7 +268,7 @@ void DsDriver::printTemperatures()
             String line;
             for (int i = 0; i < this->temperaturesArray.size(); i++)
             {
-                line = String(i) + ": " + String(this->temperaturesArray.at(i));
+                line = "#" + String(i) + ": " + String(this->temperaturesArray.at(i));
                 Serial.println(line);
             }
         }
