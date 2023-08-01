@@ -1,4 +1,4 @@
-#include "tempSensorDriver\universal_ds18b20Driver.hpp"
+#include "tempSensorDriver\ds18B20-universal-driver.hpp"
 
 // Global const defines
 
